@@ -6,10 +6,8 @@ body {
   padding-top: 35vh;
 }
 .desc {
-  font-family: rosario;
   font-size: 16px;
   padding-left: calc(50vw - 235px);
-  font-family:roboto;
   animation: slideUp 5s;
 }
 .err {
@@ -20,6 +18,8 @@ body {
   padding: 15px;
   border: 1px solid #999;
 }
+
+
 @keyframes slideUp {
   0% {
     opacity: 0;
@@ -38,11 +38,22 @@ body {
     transform: translateY(0px);
   }
 } 
-@media screen and (max-width: 900px) {
+/* media query for responsiveness */
+@media screen and (max-width:950px) {
+  #anim-logo {
+  scale: 0.4;
+  }
   .desc {
-    font-size:20px;
+    font-size: 14px;
+    width: 50vw;
+    padding:0 25vw 0 25vw;
   }
   .err {
-    font-size: 18px;
+    font-size: 12px;
+  }
+  .game-button {
+    padding: 10px;
+    font-size: 15px;
+    margin-top: 5px;
   }
 }
