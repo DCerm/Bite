@@ -45,8 +45,8 @@ body {
   }
   .desc {
     font-size: 14px;
-    width: 50vw;
-    padding: 25vw;
+    width: 80vw;
+    padding:0 10vw 0 10vw;
   }
   .err {
     font-size: 12px;
