@@ -46,7 +46,7 @@ body {
   }
 } 
 /* media query for responsiveness */
-@media screen and (max-width:650px) {
+@media screen and (max-width:950px) {
 .desc {
     font-size: 17px;
     width: 80vw;
