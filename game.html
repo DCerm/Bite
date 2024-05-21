@@ -2,9 +2,18 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Consolas&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rosario:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
 <style>
 body {
   background: #9FDDFE;
+  font-family: 'Roboto', sans-serif;
+  user-select: none; /* Prevent text selection */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* Disable tap highlight */
+  touch-action: manipulation; /* Prevent double tap zoom */
 }
 canvas {
     border: 1px solid #d3d3d3;
@@ -15,9 +24,9 @@ canvas {
 }
 </style>
 </head>
-<body onload="startGame()" style="text-align:center; padding-top:50px;">
-<script>
+<body onload="startGame()" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;" style="text-align:center; padding-top:50px;">
 
+<script>
 var myGamePiece;
 var myObstacles = [];
 var myScore;
@@ -142,7 +151,7 @@ function accelerate(n) {
 }
 </script>
 <br>
-<button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)" ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)">THRUSTERS 🚀</button>
+<button class="thrusters" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)" ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)">THRUSTERS 🚀</button>
 
 <p>Use the THRUSTERS button to stay in the air</p>
 <p>How long can you stay alive?</p>
