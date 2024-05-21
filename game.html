@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 <style>
 body {
   background: #9FDDFE;
 }
 canvas {
-    border:1px solid #d3d3d3;
+    border: 1px solid #d3d3d3;
     background-color: #F4F4ED;
+    width: 100%;
+    max-width: 960px;
+    height: auto;
 }
 </style>
 </head>
@@ -68,12 +71,17 @@ function component(width, height, color, x, y, type) {
         this.gravitySpeed += this.gravity;
         this.x += this.speedX;
         this.y += this.speedY + this.gravitySpeed;
-        this.hitBottom();
+        this.hitBoundaries();
     }
-    this.hitBottom = function() {
+    this.hitBoundaries = function() {
         var rockbottom = myGameArea.canvas.height - this.height;
         if (this.y > rockbottom) {
             this.y = rockbottom;
+            this.gravitySpeed = 0;
+        }
+        var topBoundary = 0;
+        if (this.y < topBoundary) {
+            this.y = topBoundary;
             this.gravitySpeed = 0;
         }
     }
