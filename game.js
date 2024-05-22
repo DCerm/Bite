@@ -3,6 +3,9 @@ var myObstacles = [];
 var myScore;
 
 function startGame() {
+  var myGamePiece;
+var myObstacles = [];
+var myScore;
     window.touchController = null;
     myGamePiece = new component(30, 30, "#000", 10, 120);
     myGamePiece.gravity = 0.05;
