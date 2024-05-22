@@ -12,13 +12,14 @@ body {
   width:530px;
 }
 .desc {
-  font-size: 16px;
+  font-size: 18px;
+  font-family: nunito;
   padding-left: calc(50vw - 235px);
   animation: slideUp 5s;
 }
 .err {
-  font-size: 12px;
-  color: #555;
+  font-size: 13px;
+  color: #444;
 }
 .game-button {
   padding: 15px;
