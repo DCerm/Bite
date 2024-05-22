@@ -1,0 +1,59 @@
+body {
+  background: #9FDDFE;
+  text-align:center;
+  padding-top: 50px;
+  font-family: 'nunito', sans-serif;
+  user-select: none; /* Prevent text selection */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* Disable tap highlight */
+  touch-action: manipulation; /* Prevent double tap zoom */
+}
+.thrusters {
+  padding: 10px 20px;
+  border: 1px solid #B388EB;
+}
+.BiteIntro {
+  top: 0;
+  position: absolute;
+}
+#logo {
+  padding: 10px 0 10px 0;
+  margin-left: calc(50vw - 492px);
+  width: 106px;
+  height: 40px;
+  float: left;
+}
+.desc {
+  float: right;
+  padding: 5px 0 0 185px;
+  font-family: nunito;
+}
+.descButton {
+  float: right;
+  padding: 5px 15px;
+  text-align: center;
+  margin: 15px 0 0 185px;
+  border: 1px solid #B388EB;
+  background-color: #F4F4ED;
+  font-family: nunito;
+  font-size: 14px;
+}
+canvas {
+    border: 1px solid #d3d3d3;
+    background-color: #F4F4ED;
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+}
+.copyright {
+  font-size: 13px;
+}
+@media screen and (max-width: 950px) {
+.thrusters {
+  margin-top: 25vh;
+}
+#logo {
+  margin-left: 0;
+}
+.desc {opacity: 0;}
+.descButton {margin:10px 0 0 0;}
+}
