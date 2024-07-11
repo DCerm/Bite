@@ -1,0 +1,111 @@
+{  "projects" : [' +
+  '{
+    "projectAvatar" : "IT",
+    "projectName" : "IT Solution",
+    "projectLead" : "Abu Bin Istiak",
+    "team" : "{}",
+    "progress" : "93.5%",
+    "deadline" : "5",
+    "projectId" : "1"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "KR",
+    "projectName" : "Keyword Research for SEO",
+    "projectLead" : "Emily Smith",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  },' +
+  '{
+    "projectAvatar" : "DM",
+    "projectName" : "Database Management",
+    "projectLead" : "Alex Ashley",
+    "team" : "{}",
+    "progress" : "23%",
+    "deadline" : "21",
+    "projectId" : "2"
+  }'
+  ]
+}

@@ -1,0 +1,99 @@
+.menuContainer {
+  display: flex;
+  flex-direction:row;
+  margin-bottom:50px;
+  position:sticky;
+  top:0;
+  transition: 1s ease;
+  z-index:999;
+  background-color:#f4f4ed;
+  padding:10px 50px;
+  box-shadow: 1px 1px 3px #9fddfe66;
+}
+.logo {
+  width:10%;
+}
+.blogo {
+  height:40px!important;
+  width:auto;
+  font-family:Rosario;
+}
+.text {
+  font-family:Rosario;
+  letter-spacing:1px;
+  font-size:30px;
+  font-weight:700;
+  fill:#000;
+}
+.slogo line {stroke:#000; stroke-width:1.5}
+.slogo .black {fill:#000;}
+.slogo .white {fill:#fff;}
+.menuItemsWrapper {
+  width:70%;
+}
+.menuItems {
+  display: flex;
+  flex-direction:row;
+  list-style-type:none;
+  justify-content: center;
+  border-radius:50px;
+  background-color:#9FDDFE22;
+  padding:12px 0;
+}
+.menuItems a {
+  text-decoration:none;
+  padding: 12px 20px;
+  margin:0 10px;
+  color:#000;
+  font-family:Rosario;
+  font-size:18px;
+}
+.menuItems a:active {
+  background-color:#9fddfe;
+  color:#000;
+  border-radius:30px;
+}
+.menuItems a:hover {
+  background-color:#9fddfe;
+  color:#000;
+  border-radius:30px;
+}
+.menuItem {
+}
+.MenuRightContact {
+  width:20%;
+  text-align:right;
+}
+.menuContact {
+  padding: 12px 40px;
+  color:#000;
+  font-size:18px;
+  background-color:#9fddfe;
+  border-radius:30px;
+  font-family:Rosario;
+  cursor:pointer;
+}
+.menuContact:hover {
+ padding:12px 30px;
+ background-color:#8093f1;
+ transition: 2s ease;
+}
+
+@media screen and (max-width:1000px) {
+.menuContainer {
+  margin-bottom:10px;
+  position:sticky;
+  top:0;
+  padding:10px 10px;
+}
+.menuItems {display:none;}
+.menuItemsWrapper {width:30%;}
+.MenuRightContact {width:40%;}
+.logo {width:30%;}
+.menuContact {
+  padding: 7px 10px;
+  font-size:15px;
+  cursor:pointer;
+}
+.text {font-size:30px; font-weight:500;}
+}

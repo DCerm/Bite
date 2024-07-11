@@ -1,23 +1,18 @@
-<!doctype HTML>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rosario:wght@400;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
-<link rel="stylesheet" href="bite-style.css" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XLC6QXDFYM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import styles from './assets/css/loader.module.css'
 
-  gtag('config', 'G-XLC6QXDFYM');
-</script>
-</head>
-<body>
-<div class="svg-logo-wrapper">
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
+
+function Loader() {
+const Preloader = (
+<div className={styles.loader}>
+<div className={styles.svg_logo_wrapper}>
 <svg id="anim-logo"height="200" width="530" xmlns="http://www.w3.org/2000/svg">
- <g>
+ <g transform="rotate(0 430 100)">
   <circle r="25" cx="265" cy="100" fill="transparent">
     <animate
       attributeName="cx"
@@ -36,7 +31,6 @@
       to="430"
       fill="freeze" />
   </circle>
-  <!--<circle r="10" cx="147" cy="95" fill="#fff" />-->
   <ellipse cx="262" cy="96" rx="10" ry="10" fill="#fff">
     <animate
       attributeName="cx"
@@ -55,7 +49,7 @@
       to="429" 
       fill="freeze" />
   </ellipse>
-  <line x1="290" y1="100" x2="310" y2="102" style="stroke:#000;stroke-width:5">
+  <line x1="290" y1="100" x2="310" y2="102" className={styles.svg_logo_lines}>
     <animate
       attributeName="x1"
       begin="1s"
@@ -80,7 +74,6 @@
       to="478" 
       fill="freeze" />
   </circle>
-  <!--<circle r="10" cx="147" cy="95" fill="#fff" />-->
   <ellipse cx="312" cy="101" rx="5" ry="5" fill="#fff">
     <animate
       attributeName="cx"
@@ -99,7 +92,7 @@
       to="479" 
       fill="freeze" />
   </ellipse>
-  <line x1="275" y1="77" x2="285" y2="50" style="stroke:#000;stroke-width:5">
+  <line x1="275" y1="77" x2="285" y2="50" className={styles.svg_logo_lines}>
     <animate
       attributeName="x1"
       begin="1s"
@@ -124,7 +117,6 @@
       to="451" 
       fill="freeze" />
   </circle>
-  <!--<circle r="10" cx="147" cy="95" fill="#fff" />-->
   <ellipse cx="285" cy="49" rx="5" ry="5" fill="#fff">
     <animate
       attributeName="cx"
@@ -143,7 +135,7 @@
       to="452" 
       fill="freeze" />
   </ellipse>
-  <line x1="245" y1="85" x2="225" y2="73" style="stroke:#000;stroke-width:5">
+  <line x1="245" y1="85" x2="225" y2="73" className={styles.svg_logo_lines}>
     <animate
       attributeName="x1"
       begin="1s"
@@ -168,7 +160,6 @@
       to="391" 
       fill="freeze" />
   </circle>
-  <!--<circle r="10" cx="147" cy="95" fill="#fff" />-->
   <ellipse cx="224" cy="72" rx="5" ry="5" fill="#fff">
     <animate
       attributeName="cx"
@@ -187,7 +178,7 @@
       to="391" 
       fill="freeze" />
   </ellipse>
-  <line x1="245" y1="110" x2="225" y2="120" style="stroke:#000;stroke-width:5">
+  <line x1="245" y1="110" x2="225" y2="120" className={styles.svg_logo_lines}>
     <animate
       attributeName="x1"
       begin="1s"
@@ -212,7 +203,6 @@
       to="391" 
       fill="freeze" />
   </circle>
-  <!--<circle r="10" cx="147" cy="95" fill="#fff" />-->
   <ellipse cx="224" cy="118" rx="5" ry="5" fill="#fff">
     <animate
       attributeName="cx"
@@ -231,7 +221,7 @@
       to="391" 
       fill="freeze" />
   </ellipse>
-  <line x1="270" y1="125" x2="275" y2="140" style="stroke:#000;stroke-width:5">
+  <line x1="270" y1="125" x2="275" y2="140" className={styles.svg_logo_lines}>
     <animate
       attributeName="x1"
       begin="1s"
@@ -256,7 +246,6 @@
       to="440" 
       fill="freeze" />
   </circle>
-  <!--<circle r="10" cx="147" cy="95" fill="#fff" />-->
   <ellipse cx="274" cy="140" rx="5" ry="5" fill="#fff">
     <animate
       attributeName="cx"
@@ -278,24 +267,22 @@
    <animateTransform
       attributeName="transform"
       begin="3s"
-      dur="1s"
+      dur=".8s"
       type="rotate"
       from="0 430 100"
       to="360 430 100"
-      to="0 230 100"
       repeatCount="" />
  </g>
- <g id="text" font-family="Rosario" font-size="150px" font-weight="900">
+ <g id="text" fontFamily="Rosario" fontSize="150px" fontWeight="900" letter-spacing="7px">
   <text x="30" y="150" opacity="0">BITe
-    <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="0.00001s" fill="freeze" repeatCount="20"/><animate attributeType="CSS" attributeName="opacity" from="0" to="1" begin="2s" dur="1s" fill="freeze"/>
+    <animate attributeType="CSS" attributeName="opacity" from="0" to="1" begin="2s" dur="1s" fill="freeze"/>
   </text>
  </g>
  </svg> 
 </div>
-
-<div class="desc">
-  <p>Building something beautiful...</p>
-  <p class="err">ERR_WEBSITE_BUILD_IN_PROGRESS</p>
-  <span> Want to play a game while you wait? <a href="game.html"><button class="game-button">Launch game</button></a></span>
 </div>
-</body>
+);
+return Preloader
+}
+
+export default Loader;
