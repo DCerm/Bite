@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.82fa8f96.css",
+    "main.css": "/static/css/main.4ccf9ca9.css",
     "main.js": "/static/js/main.cf67f748.js",
     "static/media/Bite-background.png": "/static/media/Bite-background.7873184fde3145939fdc.png",
     "static/media/Nunito-VariableFont_wght.ttf": "/static/media/Nunito-VariableFont_wght.c0f0807a40aebdc41b40.ttf",
     "static/media/Rosario-VariableFont_wght.ttf": "/static/media/Rosario-VariableFont_wght.9883dc78834b83cc5ac4.ttf",
     "index.html": "/index.html",
-    "main.82fa8f96.css.map": "/static/css/main.82fa8f96.css.map",
+    "main.4ccf9ca9.css.map": "/static/css/main.4ccf9ca9.css.map",
     "main.cf67f748.js.map": "/static/js/main.cf67f748.js.map"
   },
   "entrypoints": [
-    "static/css/main.82fa8f96.css",
+    "static/css/main.4ccf9ca9.css",
     "static/js/main.cf67f748.js"
   ]
 }
