@@ -1,7 +1,7 @@
 .form {
   width: 90%;
   padding:50px 20px;
-  box-shadow: 1px 0.5px 5px #9fddfe;
+  box-shadow: 1px 0.5px 5px var(--Bite-blue);
   border-radius: 50px;
 }
 fieldset {
@@ -28,9 +28,9 @@ select, textarea, input:not([type=radio],[type=submit],[type=checkbox]) {
   font-family:Nunito;
   font-size:15px;
   background:#ffffff22;
-  border: 1px solid #9fddfe;
+  border: 1px solid var(--Bite-blue);
 }
-select, textarea, input:not([type=submit]) {color:#999}
+select, textarea, input:not([type=submit]) {color:var(--tx-color)}
 select {height:40px; border-radius:0; color:;}
 option {
   font-family:Nunito;
@@ -41,7 +41,7 @@ input:focus, input:active {
   border:1px solid #8093f1;
 }
 .submit {
-  background-color:#9fddfe;
+  background-color:var(--Bite-blue);
   height:50px;
   width:100%;
   margin-top:20px;
@@ -64,7 +64,7 @@ input:focus, input:active {
 .form {
   width: 95%;
   padding:20px 10px;
-  box-shadow: 1px 0.5px 5px #9fddfe;
+  box-shadow: 1px 0.5px 5px var(--Bite-blue);
   border-radius: 20px;
 }
 legend {

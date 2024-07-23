@@ -1,11 +1,11 @@
 .myAlert .swal2-title {
   font-family: Rosario;
-  color: #000; /* Replace with your font color */
+  color:var(--tx-color); /* Replace with your font color */
 }
 
-.myAlert .swal2-content {
+#swal2-html-container {
   font-family: Nunito;
-  color: #f1f1f1; /* Replace with your font color */
+  color:var(--tx-color); /* Replace with your font color */
 }
 
 .myAlert .swal2-confirm {
@@ -13,6 +13,6 @@
   color: #000; /* Replace with your button text color */
 }
 
-.myAlert .swal2-popup {
-  background-color: ; /* Replace with your background color */
+.swal2-popup {
+  background-color:var(--bg-swal); /* Replace with your background color */
 }

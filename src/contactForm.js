@@ -66,6 +66,7 @@ export function MyForm() {
 				  onChange={handleChange}
 				  placeholder="Your First Name"
 				  required
+				  autocomplete="given-name"
 				/>
       		</label>
       		<label className={styles.columns50}>Last Name <span style={{color:'red'}}>*</span>  <br/>
@@ -76,6 +77,7 @@ export function MyForm() {
 				  onChange={handleChange}
 				  placeholder=" Your Last Name"
 				  required
+				  autocomplete="family-name"
 				/>
       		</label>
       	   </div>
@@ -88,6 +90,7 @@ export function MyForm() {
 				  onChange={handleChange}
 				  placeholder="Your Email Address"
 				  required
+				  autocomplete="email"
 				/>
       		</label>
       		<label className={styles.columns50}>Phone <span style={{color:'red'}}>*</span> <br/>
@@ -98,6 +101,7 @@ export function MyForm() {
 				  onChange={handleChange}
 				  placeholder="Your Phone Number"
 				  required
+				  autocomplete="tel"
 				/>
       		</label>
      		</div>
@@ -115,6 +119,7 @@ export function MyForm() {
 				  onChange={handleChange}
 				  placeholder="Your Company/Business Name"
 				  required
+				  autocomplete="organization"
 				/>
       		</label>
       		<label className={styles.columns50}>Company Email <span style={{color:'red'}}>*</span>  <br/>
@@ -123,8 +128,9 @@ export function MyForm() {
 				  name="COMPANYEMAIL"
 				  value={inputs.COMPANYEMAIL || ""}
 				  onChange={handleChange}
-				  placeholder="Your Organisation/Business Email Address"
+				  placeholder="Your Organization/Business Email Address"
 				  required
+				  autocomplete="url"
 				/>
       		</label>
       	   </div>
@@ -149,7 +155,8 @@ export function MyForm() {
 				  name="WEBSITELINK"
 				  value={inputs.WEBSITELINK || ""}
 				  onChange={handleChange}
-				  placeholder="Please input the link to your website."
+				  placeholder="https://mygreatwebsite.io"
+				  autocomplete="url"
 				/>
       		</label>
      		</div>

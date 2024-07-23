@@ -9,16 +9,24 @@
   width:100vw;
   height:100vh;
   overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 .svg_logo_wrapper {
   text-align:center;
-  padding-top: 35vh;
 }
-#anim-logo {
+.animlogo {
   height:200px;
   width:530px;
 }
-
+.text {
+  font-family:Rosario;
+  font-size:150px;
+  font-weight:900;
+  letter-spacing:7px;
+  stroke:#000;
+}
 .svg_logo_lines {
   stroke:#000;
   stroke-width:5;
@@ -44,21 +52,21 @@
 } 
 /* media query for responsiveness */
 @media screen and (max-width:950px) { 
-.desc {
-    font-size: 17px;
-    width: 80vw;
-    padding: 0 0 0 20vw;
-  }
+.loader {
+  padding-left:14vw;
 }
-@media screen and (max-width:650px) {
 .svg-logo-wrapper {
   padding-top: 20vh;
   overflow-x:hidden!important;
 }
-  #anim-logo {
+.text {
+  font-weight:600;
+  letter-spacing:7px;
+}
+  .animlogo {
   height:200px;
   width:500px;
-  scale: 0.5;
+  scale: 0.7;
   margin-left:-32vw;
   }
 }

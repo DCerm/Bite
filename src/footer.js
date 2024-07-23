@@ -1,30 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import light from './assets/css/bite-style.module.css';
-import dark from './assets/css/bite-styleDark.module.css';
-import { isOsSettingDarkTheme } from './darkTheme.js';
+import styles from './assets/css/bite-style.module.css';
 import { MdLanguage, MdOutlineImportantDevices, MdOutlinePhonelink, MdOutlineQueryStats, MdOutlineCall, MdOutlineForum, MdOutlineMarkAsUnread, MdOutlineRadar, MdOutlinePhone, MdFacebook, MdInfoOutline } from "react-icons/md";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-
-let isDarkTheme='';
-let styles='';
-let Mode='';
-let mode='';
-  if (isOsSettingDarkTheme) {
-    isDarkTheme=true;
-    } else {
-      isDarkTheme=false;
-  }
-  if (isDarkTheme) {
-    styles = dark;
-  } else {
-    styles = light;
-  }
-  
 function Footer() {
   const footer = (
+  <>
     <section>
+    <div>
     <div className={styles.spacer50}></div> 
     <div className={styles.columns + ' ' + styles.footerGrid}>
         <div className={styles.columns3}>
@@ -34,7 +17,7 @@ function Footer() {
                BITe agency harnesses digital technologies to give you real results that grow your business.
                Our consumer psychology based methods ensure you aren't just spending money on digital technology,
                but earning good returns on your investments. With BITe, you can get a larger chunk of your market
-               – no matter where you are in the world.
+               – no matter what level you are at.
            </p>
            <div className={styles.spacer20}></div>
            <div className={styles.columns + ' ' + styles.grid + ' ' + styles.social + ' ' + styles.mcolumns}>
@@ -93,7 +76,7 @@ function Footer() {
                  <div className={styles.columns80}>
                      <h6 className={styles.smHeading}>Ads that count</h6>
                      <p className={styles.footerSmP}>
-                        If your ads and post get skipped, you just wasted money. We cut the waste with creative advertising.
+                        Your marketing efforts go to waste when your ads and post get skipped. We cut down the waste with creative advertising.
                      </p>
                 </div>
             </div>
@@ -119,18 +102,19 @@ function Footer() {
                  <div className={styles.columns80}>
                      <h6 className={styles.smHeading}>Ready for real results?</h6>
                      <p className={styles.footerSmP}>
-                         Leave us a message right away. We are the BITe for your larger market chunk.
+                         Leave us a message right away. Take your business to the next level with innovative digital solutions. Get a larger market share with BITe.
                      </p>
                 </div>
             </div>
             </a>
-            <div className={styles.mspacer}></div> <div className={styles.mspacer}></div> <div className={styles.mspacer}></div> <div className={styles.mspacer}></div>      
         </div>
     </div>
     <div className={styles.spacer50}></div> 
-    <div className={styles.mspacer}></div> <div className={styles.mspacer}></div> <div className={styles.mspacer}></div> 
-    <div className={styles.dHide}>© Bite Agency</div>
+  </div>
   </section>
+  <div className={styles.copyright+' '+styles.center}>©2024 BITe Agency | All Rights Reserved.</div>
+  <div className={styles.mspacer}></div><div className={styles.mspacer}></div><div className={styles.mspacer}></div><div className={styles.mspacer}></div>
+  </>
   );
   
 return footer;

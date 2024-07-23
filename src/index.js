@@ -1,59 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useState } from 'react';
 import Loader from './loader.js';
 import mainMenu from './mainMenu.js';
-import light from './assets/css/bite-style.module.css';
-import dark from './assets/css/bite-styleDark.module.css';
+import styles from './assets/css/bite-style.module.css';
 import gear from './assets/settings.png';
-import { MdLightMode, MdNightlightRound } from "react-icons/md";
-import { isOsSettingDarkTheme } from './darkTheme.js';
+import Toggle from './toggle.js';
 import contactForm from './contactForm.js';
 import Footer from './footer.js';
+const isOsSettingDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-let isDarkTheme='';
-let styles='';
-let Mode='';
+function Content() {
+const [isDark, setIsDark] = useState(isOsSettingDarkTheme);
 let mode='';
-  if (isOsSettingDarkTheme) {
-    isDarkTheme=true;
-    } else {
-      isDarkTheme=false;
-  }
-  if (isDarkTheme) {
-    styles = dark;
-    Mode = MdLightMode;
-    mode = 'dark';
-  } else {
-    styles = light;
-      Mode = MdNightlightRound;
-      mode = 'light';
-  }
-function changeMode() {
-  isDarkTheme=(!isDarkTheme);
-}  
-
-const Content = (
-<div className={styles.BiteApp}>
+return (
+<div className={styles.BiteApp} data-theme={isDark ? "dark" : "light"}>
       <div className={styles.appMenu}>
         <div className={styles.appMenuItems}>
-           <div><a href="#home">Home</a></div>
-           <div><a href="#services">Services</a></div>
-           <div><a href="#contact">Contact</a></div>
+           <a href="#home">Home</a>
+           <a href="#services"><div>Services</div></a>
+           <a href="#contact"><div>Contact</div></a>
         </div>
         <div className={styles.bottomAligned}>
-           <div className={styles.toggle}><a onClick={changeMode()} ><Mode /></a><br/>System</div>
-      </div>
+           <div className={styles.toggle + ' ' + styles.flcenter}>
+           <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)} />{isDark? mode="Light mode" :  mode="Dark mode"}
+           </div>
         </div>
-        
-      <div className={styles.appScreen}>
-        <div id="home" className={styles.actual}>
+       </div>
+      <div className={styles.appScreen} id="home">
+        <div className={styles.actual}>
          {mainMenu()} 
          
             {/*/////////////////////////////////////HERO///////////////////////////////////////////////////////////*/}
           <section><div className={styles.hero}>
-               <div className={styles.heroLeft}>
-                    <h1>Get Actual Results with <br /> Innovation + Technology<span style={{color:'#8093f1'}}>.</span></h1>
-                    
+                <div className={styles.heroLeft}>
+                    <h1>Get Actual Results with <br /> Innovation + Technology<span style={{color:'#8093f1'}}>.</span></h1>    
                 </div>
                 <div className={styles.heroRight}>
                       <svg height="400" width="400" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +51,7 @@ const Content = (
                 <div className={styles.columns + ' ' + styles.reverse + ' ' + styles.mc}>
                <div className={styles.columns50}>
                  <div className={styles.mspacer}>
-                 <a href="#contac"><button className={styles.contactButton}>I want results now &nbsp;&nbsp;
+                 <a href="#contact"><button className={styles.contactButton}>I want results now &nbsp;&nbsp;
                          <svg height="10" width="70" xmlns="http://www.w3.org/2000/svg">
                              <path strokeWidth="2" fill="none" className={styles.buttonArrow} d="M0,5 L60,5 L60,0 L70,5 L60,10 L60,5"/>
                          </svg></button>
@@ -86,7 +67,6 @@ const Content = (
                </div>
              </div>
           </div></section>
-          <div className={styles.gradient}>
             <div className={styles.spacer50}></div>
             
             {/*////////////////////////////////HARNESS TECH////////////////////////////////////////////////////////////////*/}
@@ -104,6 +84,10 @@ const Content = (
                            <p>
                             Our innovative approach helps you <i style={{backgroundColor:'#9fddfe', padding:'0 5px', color:'#1f1f1f', marginRight:'3px'}}>connect</i> 
                             with your target audience, drive conversions and build relationships.
+                            </p>
+                            <p>
+                            We use a strong blend of creativity, technical proficiency and understanding of user psychology to build products / 
+                            content that resonates with your audience and drive conversions. 
                             </p>
                             <div className={styles.spacer20}></div>
                             <a href="#contact"><button className={styles.contactButton}>I want results now &nbsp;&nbsp;
@@ -152,11 +136,11 @@ const Content = (
                            <p><span className={styles.counter}><span className={styles.purple + ' ' + styles.counterIcon}>+</span> 40%</span><br/>increase in conversions</p>
                        </div></div>
            
-           <div className={styles.spacer50}></div><div className={styles.spacer20}></div></div>
-           </section></div>
+           <div id="services" className={styles.spacer50}></div><div className={styles.spacer20}></div></div>
+           </section>
     
             {/*////////////////////////////////HOW WE GET RESULTS////////////////////////////////////////////////////////////////*/}
-            <section id="services"><div className={styles.spacer50}></div>
+            <section><div className={styles.spacer50}></div>
                   <div className={styles.borderBottom}>
                    <h3 className={styles.bigHeading + ' ' + styles.mcenter}>Here is how we will get you results</h3>
                    <div className={styles.spacer30}></div>
@@ -309,8 +293,10 @@ const Content = (
                               </div>
                               <div className={styles.columns80 + ' ' + styles.mcenter + ' ' + styles.gridBox  + ' ' + styles.mnopad}>
                                  <h6 className={styles.smHeading}>Customer relationship management (CRM)</h6>
-                                 <div className={styles.mspacer}></div>
-                                  <p>It's only half the results if you don't build a relationship that brings them back.</p>
+                                 <div className={styles.spacer20}></div>
+                                  <p className={styles.footerP}>We help you stay top of mind of your customers to keep them coming back.<br/>
+                                  It's only half the results if you don't build a relationship that brings them back.
+                                  </p>
                              </div>                               
                     </div>
                     
@@ -340,38 +326,38 @@ const Content = (
                           <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592917/Lasht-n-2900-x-850-px-4_i19kcd.svg" />
                           <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592643/Raven-Gold_logo-removebg-preview-1-e1664598593566_mj6gvx.png" />
                           {/*repeat for loop*/}
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720591164/benfik-removebg-preview_kmwd9q.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1718744619/Screenshot_2023-10-10_at_04.57.55-removebg-preview_qticfa.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1705443462/vivaLuxe-logo.webp" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1708076254/IMG_0186-removebg-preview.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594535/finalbionic-01_vrydus.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594374/Image-PNG-Transparent-Exact-Large_xyiqfd.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592917/Lasht-n-2900-x-850-px-4_i19kcd.svg" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592643/Raven-Gold_logo-removebg-preview-1-e1664598593566_mj6gvx.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720591164/benfik-removebg-preview_kmwd9q.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1718744619/Screenshot_2023-10-10_at_04.57.55-removebg-preview_qticfa.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1705443462/vivaLuxe-logo.webp" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1708076254/IMG_0186-removebg-preview.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594535/finalbionic-01_vrydus.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594374/Image-PNG-Transparent-Exact-Large_xyiqfd.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592917/Lasht-n-2900-x-850-px-4_i19kcd.svg" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592643/Raven-Gold_logo-removebg-preview-1-e1664598593566_mj6gvx.png" />
                            {/*repeat for loop*/}
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720591164/benfik-removebg-preview_kmwd9q.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1718744619/Screenshot_2023-10-10_at_04.57.55-removebg-preview_qticfa.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1705443462/vivaLuxe-logo.webp" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1708076254/IMG_0186-removebg-preview.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594535/finalbionic-01_vrydus.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594374/Image-PNG-Transparent-Exact-Large_xyiqfd.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592917/Lasht-n-2900-x-850-px-4_i19kcd.svg" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592643/Raven-Gold_logo-removebg-preview-1-e1664598593566_mj6gvx.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720591164/benfik-removebg-preview_kmwd9q.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1718744619/Screenshot_2023-10-10_at_04.57.55-removebg-preview_qticfa.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1705443462/vivaLuxe-logo.webp" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1708076254/IMG_0186-removebg-preview.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594535/finalbionic-01_vrydus.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594374/Image-PNG-Transparent-Exact-Large_xyiqfd.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592917/Lasht-n-2900-x-850-px-4_i19kcd.svg" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592643/Raven-Gold_logo-removebg-preview-1-e1664598593566_mj6gvx.png" />
                           {/*repeat for loop*/}
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720591164/benfik-removebg-preview_kmwd9q.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1718744619/Screenshot_2023-10-10_at_04.57.55-removebg-preview_qticfa.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1705443462/vivaLuxe-logo.webp" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1708076254/IMG_0186-removebg-preview.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594535/finalbionic-01_vrydus.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594374/Image-PNG-Transparent-Exact-Large_xyiqfd.png" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592917/Lasht-n-2900-x-850-px-4_i19kcd.svg" />
-                          <img src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592643/Raven-Gold_logo-removebg-preview-1-e1664598593566_mj6gvx.png" />
+                          <img className={styles.mHide} className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720591164/benfik-removebg-preview_kmwd9q.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1718744619/Screenshot_2023-10-10_at_04.57.55-removebg-preview_qticfa.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1705443462/vivaLuxe-logo.webp" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1708076254/IMG_0186-removebg-preview.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594535/finalbionic-01_vrydus.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720594374/Image-PNG-Transparent-Exact-Large_xyiqfd.png" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592917/Lasht-n-2900-x-850-px-4_i19kcd.svg" />
+                          <img className={styles.mHide} src="https://res.cloudinary.com/dzfqshhzu/image/upload/v1720592643/Raven-Gold_logo-removebg-preview-1-e1664598593566_mj6gvx.png" />
                       </div> 
-                      <div className={styles.spacer50}></div>
+                      <div id="contact" className={styles.spacer50}></div>
                  </div>  
             </section>
      {/*////////////////////////////////CONTACT////////////////////////////////////////////////////////////////*/}
-            <section id="contact"><div className={styles.spacer50}></div>
+            <section><div className={styles.spacer50}></div>
                   <div className={styles.borderBottom}>
                       
                       <div className={styles.spacer30}></div>   
@@ -404,21 +390,21 @@ const Content = (
    </div>
 </div>
 );
-
+}
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {favoritecolor: <Loader/>};
+    this.state = {favoritecontent: <Loader/>};
   }
   componentDidMount() {
     setTimeout(() => {
-      this.setState({favoritecolor: Content})
-    }, 500)
+      this.setState({favoritecontent: <Content/>})
+    }, 3000)
   }
   
   render() {
     return (
-      <>{this.state.favoritecolor}</>
+      <>{this.state.favoritecontent}</>
     );
   }
 }

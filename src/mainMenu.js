@@ -1,21 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import light from './assets/css/mainMenu.module.css';
-import dark from './assets/css/mainMenuDark.module.css';
-import llogo from './bite.svg';
-import dlogo from './biteWhite.svg';
-import { isOsSettingDarkTheme } from './darkTheme.js';
-
-
+import styles from './assets/css/mainMenu.module.css';
 
 function mainMenu() {
-  let styles='';
-  let logo='';
-  if (isOsSettingDarkTheme) {
-    styles = dark; logo=dlogo;
-    } else {
-      styles = light;  logo=llogo;
-  }
 const menu = (
   <div className={styles.menuContainer}>
     <div className={styles.logo}>
@@ -47,7 +33,7 @@ const menu = (
       </ul>
     </div>
     <div className={styles.MenuRightContact}>
-      <a href=""><button className={styles.menuContact}>I WANT RESULTS</button></a>
+      <a href="#contact"><button className={styles.menuContact}>I WANT RESULTS</button></a>
     </div>
   </div>
 );

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import styles from './assets/css/loader.module.css'
 
 // If you want to start measuring performance in your app, pass a function
@@ -11,7 +10,7 @@ function Loader() {
 const Preloader = (
 <div className={styles.loader}>
 <div className={styles.svg_logo_wrapper}>
-<svg id="anim-logo"height="200" width="530" xmlns="http://www.w3.org/2000/svg">
+<svg className={styles.animlogo} height="200" width="530" xmlns="http://www.w3.org/2000/svg">
  <g transform="rotate(0 430 100)">
   <circle r="25" cx="265" cy="100" fill="transparent">
     <animate
@@ -273,7 +272,7 @@ const Preloader = (
       to="360 430 100"
       repeatCount="" />
  </g>
- <g id="text" fontFamily="Rosario" fontSize="150px" fontWeight="900" letter-spacing="7px">
+ <g className={styles.text}>
   <text x="30" y="150" opacity="0">BITe
     <animate attributeType="CSS" attributeName="opacity" from="0" to="1" begin="2s" dur="1s" fill="freeze"/>
   </text>

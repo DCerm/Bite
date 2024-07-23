@@ -1,12 +1,12 @@
 .menuContainer {
   display: flex;
   flex-direction:row;
-  margin-bottom:50px;
+  margin-bottom:30px;
   position:sticky;
   top:0;
   transition: 1s ease;
   z-index:999;
-  background-color:#f4f4ed;
+  background-color:var(--bg-pg);
   padding:10px 50px;
   box-shadow: 1px 1px 3px #9fddfe66;
 }
@@ -23,11 +23,11 @@
   letter-spacing:1px;
   font-size:30px;
   font-weight:700;
-  fill:#000;
+  fill:var(--tx-color);
 }
-.slogo line {stroke:#000; stroke-width:1.5}
-.slogo .black {fill:#000;}
-.slogo .white {fill:#fff;}
+.slogo line {stroke:var(--tx-color); stroke-width:1.5;}
+.slogo .black {fill:var(--tx-color);}
+.slogo .white {fill:var(--bg-pg);}
 .menuItemsWrapper {
   width:70%;
 }
@@ -44,17 +44,17 @@
   text-decoration:none;
   padding: 12px 20px;
   margin:0 10px;
-  color:#000;
+  color:var(--tx-color);
   font-family:Rosario;
   font-size:18px;
 }
 .menuItems a:active {
-  background-color:#9fddfe;
+  background-color:var(--Bite-blue);
   color:#000;
   border-radius:30px;
 }
 .menuItems a:hover {
-  background-color:#9fddfe;
+  background-color:var(--Bite-blue);
   color:#000;
   border-radius:30px;
 }
@@ -68,7 +68,7 @@
   padding: 12px 40px;
   color:#000;
   font-size:18px;
-  background-color:#9fddfe;
+  background-color:var(--Bite-blue);
   border-radius:30px;
   font-family:Rosario;
   cursor:pointer;
@@ -76,14 +76,15 @@
 .menuContact:hover {
  padding:12px 30px;
  background-color:#8093f1;
- transition: 2s ease;
+ transition: 1s ease;
 }
 
 @media screen and (max-width:1000px) {
 .menuContainer {
   margin-bottom:10px;
-  position:sticky;
+  position:fixed;
   top:0;
+  width:95vw;
   padding:10px 10px;
 }
 .menuItems {display:none;}
@@ -94,6 +95,9 @@
   padding: 7px 10px;
   font-size:15px;
   cursor:pointer;
+}
+.menuContact:hover {
+ padding:7px 10px;
 }
 .text {font-size:30px; font-weight:500;}
 }
